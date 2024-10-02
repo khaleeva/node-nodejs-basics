@@ -10,13 +10,7 @@ const copy = async () => {
     } else {
         try {
             await fs.mkdir(copy_filePath);
-            const files = await fs.readdir(filePath);
-
-            for (const file of files) {
-                const sourceFile = path.join(filePath, file);
-                const copyFile = path.join(copy_filePath, file);
-                await fs.copyFile(sourceFile, copyFile);
-            }
+            await fs.cp(filePath, copy_filePath, { recursive: true });
         } catch (error) {
             console.error("FS operation failed");
         }
