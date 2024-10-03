@@ -1,5 +1,5 @@
-import {createHash} from "node:crypto";
-import {createReadStream} from "node:fs";
+import {createHash} from "crypto";
+import {createReadStream} from "fs";
 import path from "path";
 
 const calculateHash = async () => {
