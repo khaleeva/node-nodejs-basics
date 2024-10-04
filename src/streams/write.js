@@ -7,6 +7,8 @@ const write = async () => {
 
     const output = createWriteStream(filePath);
 
+    console.log("Please enter some text in console");
+
     stdin.on("data", (data) => {
         output.write(data);
     });
